@@ -29,6 +29,6 @@ require.config({
 	}
 });
 
-require(['jsx!app/randoom'], function(FluxBone) {
-	FluxBone.setup();
+require(['jsx!app/randoom'], function(Randoom) {
+	Randoom.setup();
 });

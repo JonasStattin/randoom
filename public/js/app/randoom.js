@@ -1,34 +1,19 @@
 define([
 	'React',
 	'./dispatcher',
-	'./stores/tableCollection',
+	'./stores/tablecollection',
 	'jsx!./components/tablelist.react'
 	], function(React, Dispatcher, TableCollection, TableList) {
 
 	'use strict';
 	var setup = function() {
 
-		var TABLES = [
-			{
-				title: 'My first table',
-				entries: [
-					'The first result',
-					'Result the second',
-					'A third result'
-				]
-			},
-			{
-				title: 'My second table',
-				entries: [
-					'The result premiere',
-					'Secondi Resulti',
-					'Tripoli',
-					'Quattro Formaggio'
-				]
+		var tableData = new TableCollection();
+		tableData.fetch({
+			success: function(payload) {
+				React.render(<TableList tables={payload.toJSON()} />, document.body);
 			}
-		];
-
-		React.render(<TableList tables={TABLES} />, document.body);
+		});
 
 	};
 

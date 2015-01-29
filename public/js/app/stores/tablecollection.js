@@ -4,9 +4,10 @@ define([
 	], function(Backbone, Table) {
 
 	var TableCollection = Backbone.Collection.extend({
-		model: Table
+		model: Table,
+		url: '/tables',
 	});
 
-	return Table;
+	return TableCollection;
 
 });
