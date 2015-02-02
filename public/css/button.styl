@@ -1,0 +1,43 @@
+button {
+	background: #2C3E50;
+	border: 0;
+	color: #ECF0F1;
+	font-size: 1em;
+	font-weight: 300;
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 4px;
+
+	&:hover {
+		background: #34495E;
+	}
+
+	&:focus {
+		outline:0;
+	}
+
+	&:active {
+		line-height: 42px;
+	}
+
+	&.roll, &.close {
+		background: #D35400;
+
+		&:hover {
+			background: #E67E22;
+			color: #FFFFFF;
+		}
+	}
+
+	&.close {
+		padding: 0 10px;
+		height: 20px;
+		line-height: 20px;
+
+		&:active {
+			line-height: 22px;
+		}
+	}
+
+}

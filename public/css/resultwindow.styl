@@ -1,0 +1,51 @@
+.resultWindow {
+	position: absolute;
+	width: 100%;
+	top:0;
+	left: 0;
+
+	> .resultBox {
+		background: #27AE60;
+		color: #FFFFFF;
+		border-radius: 4px;
+		padding: 5px 5px 5px 5px;
+		display: none;
+
+		position: relative;
+		width: 90%;
+		max-width: 400px;
+		margin: 0 auto;
+
+		> .resultHeader {
+			> .resultHeading {
+				margin: 0 10px 0 0;
+				float: left;
+			}
+
+			> .close {
+				float: right;
+			}
+
+			&:after {
+				content: ".";
+				visibility: hidden;
+				display: block;
+				height: 0;
+				clear: both;
+			}
+		}
+
+		> .resultOutput {
+			background: #FFFFFF;
+			color: #333333;
+			margin: 2px 0 0 0;
+			padding: 10px;
+			border-radius: 4px;
+			text-align: center;
+		}
+
+		&.show {
+			display: block;
+		}
+	}
+}

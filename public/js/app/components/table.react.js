@@ -13,7 +13,7 @@ define([
 				value: result
 			});
 		},
-		
+
 		render: function() {
 			var entries = [];
 			this.props.table.entries.forEach(function(entry, i) {
@@ -23,16 +23,10 @@ define([
 			return (
 				<li className="table">
 					<header>
-						<h3>{this.props.table.title}</h3>
-						<button onClick={this.roll}>Roll</button>
+						<h3 className="tableHeading">{this.props.table.title}</h3>
+						<button className="roll" onClick={this.roll}>Roll</button>
 					</header>
 					<table>
-						<thead>
-							<tr>
-								<th>#</th>
-								<th>Result</th>
-							</tr>
-						</thead>
 						<tbody>{entries}</tbody>
 					</table>
 				</li>

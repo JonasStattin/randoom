@@ -12,8 +12,8 @@ define([
 		var tableData = new TableCollection();
 		tableData.fetch({
 			success: function(payload) {
-				React.render(<TableList tables={payload.toJSON()} />, document.getElementById('tables'));
-				React.render(<Result />, document.getElementById('result'));
+				React.render(<TableList tables={payload.toJSON()} />, document.getElementById('tablesWindow'));
+				React.render(<Result />, document.getElementById('resultWindow'));
 			}
 		});
 

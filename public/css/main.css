@@ -1,0 +1,130 @@
+body {
+  background-color: #f1f2f2;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: #333;
+  margin: 20px;
+}
+button {
+  background: #2c3e50;
+  border: 0;
+  color: #ecf0f1;
+  font-size: 1em;
+  font-weight: 300;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+}
+button:hover {
+  background: #34495e;
+}
+button:focus {
+  outline: 0;
+}
+button:active {
+  line-height: 42px;
+}
+button.roll,
+button.close {
+  background: #d35400;
+}
+button.roll:hover,
+button.close:hover {
+  background: #e67e22;
+  color: #fff;
+}
+button.close {
+  padding: 0 10px;
+  height: 20px;
+  line-height: 20px;
+}
+button.close:active {
+  line-height: 22px;
+}
+.resultWindow {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.resultWindow > .resultBox {
+  background: #27ae60;
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px 5px 5px 5px;
+  display: none;
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.resultWindow > .resultBox > .resultHeader > .resultHeading {
+  margin: 0 10px 0 0;
+  float: left;
+}
+.resultWindow > .resultBox > .resultHeader > .close {
+  float: right;
+}
+.resultWindow > .resultBox > .resultHeader:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.resultWindow > .resultBox > .resultOutput {
+  background: #fff;
+  color: #333;
+  margin: 2px 0 0 0;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+.resultWindow > .resultBox.show {
+  display: block;
+}
+.tablesWindow > ul {
+  padding: 0;
+  list-style: none;
+}
+.tablesWindow > ul > li.table {
+  background: #34495e;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+.tablesWindow > ul > li.table > header > .tableHeading {
+  color: #ecf0f1;
+  margin: 0;
+  float: left;
+  max-width: 220px;
+}
+.tablesWindow > ul > li.table > header > .roll {
+  float: right;
+}
+.tablesWindow > ul > li.table > header:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+  margin-bottom: 10px;
+}
+.tablesWindow > ul > li.table > table {
+  width: 100%;
+  border-spacing: 0;
+}
+.tablesWindow > ul > li.table > table th {
+  background: #ecf0f1;
+}
+.tablesWindow > ul > li.table > table tr {
+  background: #fff;
+}
+.tablesWindow > ul > li.table > table tr:nth-child(odd) {
+  background: #bdc3c7;
+}
+.tablesWindow > ul > li.table > table td {
+  padding: 4px;
+}
