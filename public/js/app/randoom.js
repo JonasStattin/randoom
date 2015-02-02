@@ -2,8 +2,9 @@ define([
 	'React',
 	'./dispatcher',
 	'./stores/tablecollection',
-	'jsx!./components/tablelist.react'
-	], function(React, Dispatcher, TableCollection, TableList) {
+	'jsx!./components/tablelist.react',
+	'jsx!./components/result.react'
+	], function(React, Dispatcher, TableCollection, TableList, Result) {
 
 	'use strict';
 	var setup = function() {
@@ -11,7 +12,8 @@ define([
 		var tableData = new TableCollection();
 		tableData.fetch({
 			success: function(payload) {
-				React.render(<TableList tables={payload.toJSON()} />, document.body);
+				React.render(<TableList tables={payload.toJSON()} />, document.getElementById('tables'));
+				React.render(<Result />, document.getElementById('result'));
 			}
 		});
 
