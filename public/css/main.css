@@ -1,5 +1,6 @@
 body {
   background-color: #f1f2f2;
+  background: url("../img/glorious-desert-lscape-at-sunrise-hd-wallpaper-334330.jpg");
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   color: #333;
@@ -49,18 +50,19 @@ button.close:active {
   left: 0;
 }
 .resultWindow > .resultBox {
-  background: #1abc9c;
-  color: #fff;
-  border-radius: 4px;
-  padding: 5px 5px 5px 5px;
-  display: none;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   position: relative;
   width: 90%;
   max-width: 400px;
   margin: 0 auto;
+  display: none;
 }
 .resultWindow > .resultBox > .resultHeader > .resultHeading {
   margin: 0 10px 0 0;
+  font-weight: 100;
+  text-decoration: underline;
   float: left;
 }
 .resultWindow > .resultBox > .resultHeader > .close {
@@ -74,11 +76,9 @@ button.close:active {
   clear: both;
 }
 .resultWindow > .resultBox > .resultOutput {
-  background: #fff;
-  color: #333;
+  background: #ecf0f1;
   margin: 2px 0 0 0;
   padding: 10px;
-  border-radius: 4px;
   text-align: center;
 }
 .resultWindow > .resultBox.show {
@@ -89,17 +89,18 @@ button.close:active {
   list-style: none;
 }
 .tablesWindow > ul > li.table {
-  background: #34495e;
+  background: #fff;
   padding: 10px;
-  border-radius: 4px;
   margin-bottom: 20px;
   max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 .tablesWindow > ul > li.table > header > .tableHeading {
-  color: #ecf0f1;
   margin: 0;
   float: left;
   max-width: 220px;
+  font-weight: 300;
+  text-decoration: underline;
 }
 .tablesWindow > ul > li.table > header > .roll {
   float: right;
@@ -116,14 +117,11 @@ button.close:active {
   width: 100%;
   border-spacing: 0;
 }
-.tablesWindow > ul > li.table > table th {
-  background: #ecf0f1;
-}
 .tablesWindow > ul > li.table > table tr {
   background: #fff;
 }
 .tablesWindow > ul > li.table > table tr:nth-child(odd) {
-  background: #bdc3c7;
+  background: #ecf0f1;
 }
 .tablesWindow > ul > li.table > table td {
   padding: 4px;

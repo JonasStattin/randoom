@@ -1,0 +1,94 @@
+{
+	title: 'My first table',
+	owner: 'gvqSrGPdX69KOk0u',
+	tags: [
+		'Group A',
+		'Group B'
+	],
+	entries: [
+		{
+			range: {
+				from: 0,
+				to: 3
+			},
+			result: ['First', 'Second', 'Third']
+		},
+		{
+			range: {
+				from: 4,
+				to: 6
+			},
+			result: ['Next first', 'Next second', 'Next third']
+		}
+	]
+}
+
+{
+	title: 'My second table',
+	owner: 'gvqSrGPdX69KOk0u',
+	tags: [
+		'Group A'
+	],
+	entries: [
+		{
+			range: 1,
+			result: 'First result'
+		},
+		{
+			range: 2,
+			result: 'Second result'
+		},
+		{
+			range: 3,
+			result: 'Third result'
+		},
+		{
+			range: 4,
+			result: 'Fourth result'
+		}
+	]
+}
+
+{
+	title: 'My third table',
+	owner: 'gvqSrGPdX69KOk0u',
+	tags: [
+		'Group B'
+	],
+	entries: [
+		{
+			range: 0,
+			result: 'First result'
+		},
+		{
+			range: 1,
+			result: 'Second result'
+		},
+		{
+			range: 2,
+			result: 'Third result'
+		}
+	]
+}
+
+{
+	title: 'My fourth table',
+	owner: 'gvqSrGPdX69KOk0u',
+	tags: [
+		'Group B'
+	],
+	entries: [
+		{
+			range: 0,
+			result: ['First', 'Second', 'Third']
+		},
+		{
+			range: 1,
+			result: ['Next first', 'Next second', 'Next third']
+		},
+		{
+			range: 2,
+			result: ['Another first', 'Another second', 'Another third']
+		}
+	]
+}

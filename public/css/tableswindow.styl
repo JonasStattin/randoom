@@ -1,0 +1,57 @@
+.tablesWindow {
+	> ul {
+		padding: 0;
+		list-style: none;
+
+		> li.table {
+			background: #FFFFFF;
+			padding: 10px;
+			margin-bottom: 20px;
+			max-width: 600px;
+			box-shadow 0 2px 8px rgba(0, 0, 0, 0.3);
+
+			> header {
+				> .tableHeading {
+					margin: 0;
+					float: left;
+					max-width: 220px;
+					font-weight: 300;
+					text-decoration: underline;
+				}
+
+				> .roll {
+					float: right;
+				}
+
+				&:after {
+					content: ".";
+					visibility: hidden;
+					display: block;
+					height: 0;
+					clear: both;
+					margin-bottom: 10px;
+				}
+			}
+
+			> table {
+				width: 100%;
+				border-spacing: 0;
+
+				tr {
+					background: #FFFFFF;
+
+					&:nth-child(odd) {
+						background: #ECF0F1;
+					}
+				}
+
+				td {
+					padding: 4px;
+				}
+
+			}
+
+		}
+
+	}
+}
