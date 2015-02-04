@@ -60,7 +60,8 @@ button.close:active {
   list-style: none;
   padding: 10px;
   margin: 0;
-  background: #fff;
+  background: #3a374c;
+  color: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   overflow: hidden;
 }
