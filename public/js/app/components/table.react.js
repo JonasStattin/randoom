@@ -35,14 +35,19 @@ define([
 								useEntry = entry;
 							}
 						});
-						result += useEntry.result[i] + ' ';
+						result += useEntry.result[i] + ', ';
 					} else {
-						result += this.props.table.entries[roll].result[i] + ' ';
+						result += this.props.table.entries[roll].result[i] + ', ';
 					}
 				}
 			}
 
-			return result.trim();
+			result = result.trim();
+			if(result.charAt(result.length-1) === ',') {
+				result = result.substr(0, result.length-1)
+			}
+
+			return result;
 		},
 
 		roll: function() {
@@ -62,6 +67,11 @@ define([
 				entries.push(<TableResult result={entry.result} range={entry.range} key={i} />);
 			});
 
+			var tags = [];
+			this.props.table.tags.forEach(function(tag, i) {
+				tags.push(<li key={i}>{tag}</li>);
+			});
+
 			return (
 				<li className="table">
 					<header>
@@ -71,6 +81,7 @@ define([
 					<table>
 						<tbody>{entries}</tbody>
 					</table>
+					<ul className="tags">{tags}</ul>
 				</li>
 			);
 		}

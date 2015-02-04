@@ -2,7 +2,7 @@ define([
 	'React',
 	'../dispatcher',
 	'../stores/result'
-	], function(React, Dispatcher, ResultStore) {
+	], function(React, Dispatcher, resultStore) {
 
 	var Result = React.createClass({
 		getInitialState: function() {
@@ -12,8 +12,8 @@ define([
 		},
 
 		componentWillMount: function() {
-			ResultStore.on('change', function() {
-				this.setState(ResultStore.toJSON());
+			resultStore.on('change', function() {
+				this.setState(resultStore.toJSON());
 			}.bind(this));
 		},
 

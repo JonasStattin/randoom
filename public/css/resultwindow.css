@@ -1,0 +1,41 @@
+.resultWindow {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.resultWindow > .resultBox {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: none;
+}
+.resultWindow > .resultBox > .resultHeader > .resultHeading {
+  margin: 0 10px 0 0;
+  font-weight: 100;
+  text-decoration: underline;
+  float: left;
+}
+.resultWindow > .resultBox > .resultHeader > .close {
+  float: right;
+}
+.resultWindow > .resultBox > .resultHeader:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.resultWindow > .resultBox > .resultOutput {
+  background: #ecf0f1;
+  margin: 2px 0 0 0;
+  padding: 10px;
+  text-align: center;
+}
+.resultWindow > .resultBox.show {
+  display: block;
+}

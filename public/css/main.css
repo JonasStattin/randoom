@@ -138,3 +138,15 @@ button.close:active {
 .tablesWindow > ul > li.table > table td {
   padding: 4px;
 }
+.tablesWindow > ul > li.table > .tags {
+  list-style: none;
+  padding: 0;
+  overflow: hidden;
+  margin: 10px 0 0 0;
+}
+.tablesWindow > ul > li.table > .tags > li {
+  font-style: italic;
+  font-size: 9px;
+  float: left;
+  margin: 0 10px 0 0;
+}

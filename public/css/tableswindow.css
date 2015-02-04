@@ -1,0 +1,45 @@
+.tablesWindow {
+  margin: 0 auto;
+  max-width: 600px;
+}
+.tablesWindow > ul {
+  padding: 0;
+  list-style: none;
+}
+.tablesWindow > ul > li.table {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.tablesWindow > ul > li.table > header > .tableHeading {
+  margin: 0;
+  float: left;
+  max-width: 220px;
+  font-weight: 300;
+  text-decoration: underline;
+}
+.tablesWindow > ul > li.table > header > .roll {
+  float: right;
+}
+.tablesWindow > ul > li.table > header:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+  margin-bottom: 10px;
+}
+.tablesWindow > ul > li.table > table {
+  width: 100%;
+  border-spacing: 0;
+}
+.tablesWindow > ul > li.table > table tr {
+  background: #fff;
+}
+.tablesWindow > ul > li.table > table tr:nth-child(odd) {
+  background: #ecf0f1;
+}
+.tablesWindow > ul > li.table > table td {
+  padding: 4px;
+}

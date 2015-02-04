@@ -1,0 +1,37 @@
+button {
+  background: #2c3e50;
+  border: 0;
+  color: #ecf0f1;
+  font-size: 1em;
+  font-weight: 300;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+}
+button:hover {
+  background: #34495e;
+}
+button:focus {
+  outline: 0;
+}
+button:active {
+  line-height: 42px;
+}
+button.roll,
+button.close {
+  background: #d35400;
+}
+button.roll:hover,
+button.close:hover {
+  background: #e67e22;
+  color: #fff;
+}
+button.close {
+  padding: 0 10px;
+  height: 20px;
+  line-height: 20px;
+}
+button.close:active {
+  line-height: 22px;
+}

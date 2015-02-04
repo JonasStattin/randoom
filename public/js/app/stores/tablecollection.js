@@ -8,6 +8,6 @@ define([
 		url: '/tables',
 	});
 
-	return TableCollection;
+	return new TableCollection;
 
 });

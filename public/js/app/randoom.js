@@ -2,30 +2,29 @@ define([
 	'React',
 	'./dispatcher',
 	'./stores/tablecollection',
+	'./stores/tagcollection',
+	'jsx!./components/header.react',
+	'jsx!./components/taglist.react',
 	'jsx!./components/tablelist.react',
 	'jsx!./components/result.react'
-	], function(React, Dispatcher, TableCollection, TableList, Result) {
+	], function(React, Dispatcher, tableCollection, tagCollection, Header, TagList, TableList, Result) {
 
 	'use strict';
 	var setup = function() {
 
-		var tableData = new TableCollection();
-		tableData.fetch({
+		tableCollection.fetch({
 			success: function(payload) {
 				var data = payload.toJSON();
 
-				var tags = [];
-				data.forEach(function(d) {
-					d.tags.forEach(function(tag) {
-						tags.push(tag);
-					});
-				});
-				tags = _.uniq(tags);
+				tagCollection.parseTags(data);
 
-				React.render(<TableList tables={data} />, document.getElementById('tablesWindow'));
+				React.render(<TagList tags={tagCollection.toJSON()} />, document.getElementById('tagsWindow'));
+				React.render(<TableList />, document.getElementById('tablesWindow'));
 				React.render(<Result />, document.getElementById('resultWindow'));
 			}
 		});
+
+		React.render(<Header />, document.getElementById('mainHeader'));
 
 	};
 
