@@ -15,8 +15,8 @@ define([
 		render : function() {
 			return (
 				<li>
-					<label>{this.props.tag.tag}</label>
 					<input type="checkbox" defaultChecked={this.props.tag.show} value={this.props.tag.tag} onChange={this.changeTag} />
+					<label>{this.props.tag.tag}</label>
 				</li>
 			);
 		}

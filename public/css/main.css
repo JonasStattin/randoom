@@ -52,6 +52,30 @@ button.close {
 button.close:active {
   line-height: 22px;
 }
+.tagsWindow {
+  margin: 0 auto;
+  max-width: 600px;
+}
+.tagsWindow > ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+.tagsWindow > ul > li {
+  float: left;
+  margin: 0 20px 0 0;
+  overflow: hidden;
+}
+.tagsWindow > ul > li.tagHeader {
+  text-decoration: underline;
+}
+.tagsWindow > ul > li > input {
+  float: left;
+  margin-right: 5px;
+}
 .resultWindow {
   position: absolute;
   width: 100%;
