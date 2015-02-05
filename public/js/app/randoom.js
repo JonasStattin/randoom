@@ -13,6 +13,7 @@ define([
 	var setup = function() {
 
 		tableCollection.fetch({
+			url: '/tables/' + 'gvqSrGPdX69KOk0u',
 			success: function(payload) {
 				var data = payload.toJSON();
 

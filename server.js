@@ -34,3 +34,11 @@ app.get('/tables', function(req, res) {
 	});
 
 });
+
+app.get('/tables/:id', function(req, res) {
+	var db = req.db;
+	var collection = db.get('tablecollection');
+	collection.find({owner:req.params.id}, {}, function(e, docs) {
+		res.send(JSON.stringify(docs));
+	});
+});
