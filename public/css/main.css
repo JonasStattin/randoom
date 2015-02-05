@@ -128,9 +128,21 @@ button.close:active {
 }
 .tablesWindow > ul > li.table {
   background: #fff;
-  padding: 10px;
+  padding: 10px 10px 5px 10px;
   margin-bottom: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.tablesWindow > ul > li.table > header > .tags {
+  list-style: none;
+  padding: 0;
+  overflow: hidden;
+  margin: 0 0 0 0;
+}
+.tablesWindow > ul > li.table > header > .tags > li {
+  font-style: italic;
+  font-size: 9px;
+  float: left;
+  margin: 0 10px 0 0;
 }
 .tablesWindow > ul > li.table > header > .tableHeading {
   margin: 0;
@@ -148,11 +160,14 @@ button.close:active {
   display: block;
   height: 0;
   clear: both;
-  margin-bottom: 10px;
 }
 .tablesWindow > ul > li.table > table {
   width: 100%;
   border-spacing: 0;
+  margin-top: 10px;
+}
+.tablesWindow > ul > li.table > table.folded {
+  display: none;
 }
 .tablesWindow > ul > li.table > table tr {
   background: #fff;
@@ -163,15 +178,20 @@ button.close:active {
 .tablesWindow > ul > li.table > table td {
   padding: 4px;
 }
-.tablesWindow > ul > li.table > .tags {
-  list-style: none;
-  padding: 0;
-  overflow: hidden;
-  margin: 10px 0 0 0;
+.tablesWindow > ul > li.table > .foldButton {
+  width: 100%;
+  height: 12px;
+  line-height: 0;
+  font-size: 0;
+  text-indent: -9999px;
+  border: 1px solid #bdc3c7;
+  border-top: 1px solid #ecf0f1;
+  background-color: #fff;
+  background-image: url("../img/arrowup.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 6px;
 }
-.tablesWindow > ul > li.table > .tags > li {
-  font-style: italic;
-  font-size: 9px;
-  float: left;
-  margin: 0 10px 0 0;
+.tablesWindow > ul > li.table > .foldButton.folded {
+  background-image: url("../img/arrowdown.svg");
 }

@@ -8,11 +8,26 @@
 
 		> li.table {
 			background: #FFFFFF;
-			padding: 10px;
+			padding: 10px 10px 5px 10px;
 			margin-bottom: 20px;
 			box-shadow 0 2px 8px rgba(0, 0, 0, 0.3);
 
 			> header {
+				> .tags {
+					list-style: none;
+					padding: 0;
+					overflow: hidden;
+					margin: 0 0 0 0;
+
+					> li {
+						font-style: italic;
+						font-size: 9px;
+						float: left;
+						margin: 0 10px 0 0;
+					}
+
+				}
+
 				> .tableHeading {
 					margin: 0;
 					float: left;
@@ -31,13 +46,17 @@
 					display: block;
 					height: 0;
 					clear: both;
-					margin-bottom: 10px;
 				}
 			}
 
 			> table {
 				width: 100%;
 				border-spacing: 0;
+				margin-top: 10px;
+
+				&.folded {
+					display: none;
+				}
 
 				tr {
 					background: #FFFFFF;
@@ -53,19 +72,23 @@
 
 			}
 
-			> .tags {
-				list-style: none;
-				padding: 0;
-				overflow: hidden;
-				margin: 10px 0 0 0;
+			> .foldButton {
+				width: 100%;
+				height: 12px;
+				line-height: 0;
+				font-size: 0;
+				text-indent: -9999px;
+				border: 1px solid #bdc3c7;
+				border-top: 1px solid #ECF0F1;
+				background-color: #ffffff;
+				background-image: url("../img/arrowup.svg");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 6px;
 
-				> li {
-					font-style: italic;
-					font-size: 9px;
-					float: left;
-					margin: 0 10px 0 0;
+				&.folded {
+					background-image: url("../img/arrowdown.svg");
 				}
-
 			}
 
 		}

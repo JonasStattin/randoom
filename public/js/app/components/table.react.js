@@ -61,6 +61,14 @@ define([
 
 		},
 
+		changeFold: function() {
+			Dispatcher.dispatch({
+				actionType: 'changeFoldStatus',
+				target: this.props.table._id,
+				value: !this.props.table.folded
+			});
+		},
+
 		render: function() {
 			var entries = [];
 			this.props.table.entries.forEach(function(entry, i) {
@@ -72,16 +80,26 @@ define([
 				tags.push(<li key={i}>{tag}</li>);
 			});
 
+			var cx = React.addons.classSet;
+			var tableClasses = cx({
+				'folded': this.props.table.folded
+			});
+			var foldButtonClasses = cx({
+				'foldButton': true,
+				'folded': this.props.table.folded
+			});
+
 			return (
 				<li className="table">
 					<header>
+						<ul className="tags">{tags}</ul>
 						<h3 className="tableHeading">{this.props.table.title}</h3>
 						<button className="roll" onClick={this.roll}>Roll</button>
 					</header>
-					<table>
+					<table className={tableClasses}>
 						<tbody>{entries}</tbody>
 					</table>
-					<ul className="tags">{tags}</ul>
+					<button onClick={this.changeFold} className={foldButtonClasses}>Change fold</button>
 				</li>
 			);
 		}

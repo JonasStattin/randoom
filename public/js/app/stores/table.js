@@ -6,6 +6,7 @@ define([
 		defaults: {
 			title   : '',
 			show    : true,
+			folded  : true,
 			entries : [],
 			tags    : []
 		},

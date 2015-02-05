@@ -22,6 +22,12 @@ define([
 						table.setShow(tags);
 					});
 					break;
+				case 'changeFoldStatus':
+					var foldStatusTarget = _.find(this.models, function(table) {
+						return table.get('_id') === payload.target;
+					});
+					foldStatusTarget.set('folded', payload.value);
+					break;
 			}
 		},
 	});
