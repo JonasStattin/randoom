@@ -1,7 +1,6 @@
 define([
-	'Backbone',
-	'./tagcollection'
-	], function(Backbone, tagCollection) {
+	'Backbone'
+	], function(Backbone) {
 
 	var Table = Backbone.Model.extend({
 		defaults: {
@@ -11,16 +10,9 @@ define([
 			tags    : []
 		},
 
-		initialize: function() {
-			tagCollection.on('change', function() {
-				this.setShow();
-			}.bind(this));
-		},
-
-		setShow: function() {
+		setShow: function(tags) {
 			var show = false;
 			var myTags = this.get('tags');
-			var tags = tagCollection.toJSON();
 			myTags.forEach(function(myTag) {
 				var compareTag = _.find(tags, function(tag) {
 					return tag.tag === myTag;
