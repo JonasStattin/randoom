@@ -7,7 +7,6 @@ define([
 
 	var TableCollection = Backbone.Collection.extend({
 		model: Table,
-		url: '/tables',
 
 		initialize: function() {
 			_.bindAll(this, 'dispatchCallback')
