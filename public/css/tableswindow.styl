@@ -2,7 +2,42 @@
 	margin: 0 auto
 	max-width: 600px;
 
-	> ul {
+	> a.createTableLink {
+		display: block;
+		margin-bottom: 20px;
+		color: #FFFFFF;
+		font-weight: bold;
+		text-decoration: none;
+		text-align: right;
+	}
+
+	> ul.tagList {
+		list-style: none;
+		padding: 10px;
+		margin: 0;
+		background: #4e2b32;
+		color: #FFFFFF;
+		box-shadow 0 2px 8px rgba(0, 0, 0, 0.3);
+		overflow: hidden;
+
+		> li {
+			float: left;
+			margin: 0 20px 0 0;
+			overflow: hidden;
+
+			&.tagHeader {
+				text-decoration: underline;
+			}
+
+			> input {
+				float: left;
+				margin-right: 5px;
+			}
+
+		}
+	}
+
+	> ul.tableList {
 		padding: 0;
 		list-style: none;
 

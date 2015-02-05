@@ -1,6 +1,6 @@
 define([
 	'React',
-	'../dispatcher'
+	'../../dispatcher'
 	], function(React, Dispatcher) {
 
 	var Tag = React.createClass({

@@ -11,7 +11,7 @@ body {
 .mainHeader {
   text-align: center;
 }
-.mainHeader > img {
+.mainHeader img {
   width: 200px;
   vertical-align: bottom;
 }
@@ -51,31 +51,6 @@ button.close {
 }
 button.close:active {
   line-height: 22px;
-}
-.tagsWindow {
-  margin: 0 auto;
-  max-width: 600px;
-}
-.tagsWindow > ul {
-  list-style: none;
-  padding: 10px;
-  margin: 0;
-  background: #4e2b32;
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  overflow: hidden;
-}
-.tagsWindow > ul > li {
-  float: left;
-  margin: 0 20px 0 0;
-  overflow: hidden;
-}
-.tagsWindow > ul > li.tagHeader {
-  text-decoration: underline;
-}
-.tagsWindow > ul > li > input {
-  float: left;
-  margin-right: 5px;
 }
 .resultWindow {
   position: absolute;
@@ -122,63 +97,92 @@ button.close:active {
   margin: 0 auto;
   max-width: 600px;
 }
-.tablesWindow > ul {
+.tablesWindow > a.createTableLink {
+  display: block;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: right;
+}
+.tablesWindow > ul.tagList {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  background: #4e2b32;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+.tablesWindow > ul.tagList > li {
+  float: left;
+  margin: 0 20px 0 0;
+  overflow: hidden;
+}
+.tablesWindow > ul.tagList > li.tagHeader {
+  text-decoration: underline;
+}
+.tablesWindow > ul.tagList > li > input {
+  float: left;
+  margin-right: 5px;
+}
+.tablesWindow > ul.tableList {
   padding: 0;
   list-style: none;
 }
-.tablesWindow > ul > li.table {
+.tablesWindow > ul.tableList > li.table {
   background: #fff;
   padding: 10px 10px 5px 10px;
   margin-bottom: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
-.tablesWindow > ul > li.table > header > .tags {
+.tablesWindow > ul.tableList > li.table > header > .tags {
   list-style: none;
   padding: 0;
   overflow: hidden;
   margin: 0 0 0 0;
 }
-.tablesWindow > ul > li.table > header > .tags > li {
+.tablesWindow > ul.tableList > li.table > header > .tags > li {
   font-style: italic;
   font-size: 9px;
   float: left;
   margin: 0 10px 0 0;
 }
-.tablesWindow > ul > li.table > header > .tableHeading {
+.tablesWindow > ul.tableList > li.table > header > .tableHeading {
   margin: 0;
   float: left;
   max-width: 220px;
   font-weight: 300;
   text-decoration: underline;
 }
-.tablesWindow > ul > li.table > header > .roll {
+.tablesWindow > ul.tableList > li.table > header > .roll {
   float: right;
 }
-.tablesWindow > ul > li.table > header:after {
+.tablesWindow > ul.tableList > li.table > header:after {
   content: ".";
   visibility: hidden;
   display: block;
   height: 0;
   clear: both;
 }
-.tablesWindow > ul > li.table > table {
+.tablesWindow > ul.tableList > li.table > table {
   width: 100%;
   border-spacing: 0;
   margin-top: 10px;
 }
-.tablesWindow > ul > li.table > table.folded {
+.tablesWindow > ul.tableList > li.table > table.folded {
   display: none;
 }
-.tablesWindow > ul > li.table > table tr {
+.tablesWindow > ul.tableList > li.table > table tr {
   background: #fff;
 }
-.tablesWindow > ul > li.table > table tr:nth-child(odd) {
+.tablesWindow > ul.tableList > li.table > table tr:nth-child(odd) {
   background: #ecf0f1;
 }
-.tablesWindow > ul > li.table > table td {
+.tablesWindow > ul.tableList > li.table > table td {
   padding: 4px;
 }
-.tablesWindow > ul > li.table > .foldButton {
+.tablesWindow > ul.tableList > li.table > .foldButton {
   width: 100%;
   height: 12px;
   line-height: 0;
@@ -192,6 +196,23 @@ button.close:active {
   background-position: center;
   background-size: 6px;
 }
-.tablesWindow > ul > li.table > .foldButton.folded {
+.tablesWindow > ul.tableList > li.table > .foldButton.folded {
   background-image: url("../img/arrowdown.svg");
+}
+.createWindow {
+  margin: 0 auto;
+  max-width: 600px;
+}
+.createWindow > a.listTablesLink {
+  display: block;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: right;
+}
+.createWindow > .createForm {
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }

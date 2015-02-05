@@ -1,7 +1,7 @@
 define([
 	'React',
 	'jsx!./table.react',
-	'../stores/tablecollection'
+	'../../stores/tablecollection'
 	], function(React, Table, tableCollection) {
 
 	var TableList = React.createClass({
@@ -11,12 +11,16 @@ define([
 			};
 		},
 
-		componentWillMount: function() {
-			tableCollection.on('change', function() {
+		componentDidMount: function() {
+			tableCollection.on('change add', function() {
 				this.setState({
 					tables: tableCollection.toJSON()
 				});
 			}.bind(this));
+		},
+
+		componentWillUnmount: function() {
+			tableCollection.off('change add');
 		},
 
 		render: function() {
@@ -28,7 +32,7 @@ define([
 			});
 
 			return (
-				<ul>
+				<ul className="tableList">
 					{tables}
 				</ul>
 			);

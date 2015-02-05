@@ -1,7 +1,7 @@
 define([
 	'React',
 	'jsx!./tableresult.react',
-	'../dispatcher',
+	'../../dispatcher',
 	], function(React, TableResult, Dispatcher) {
 
 	var Table = React.createClass({
