@@ -8,6 +8,8 @@ require.config({
 		Flux             : 'vendor/flux',
 		jsx              : 'vendor/jsx',
 		JSXTransformer   : 'vendor/JSXTransformer',
+		numeral          : 'vendor/numeral',
+		Handsontable     : 'vendor/handsontable.full'
 	},
 	shim: {
 		backbone: {
@@ -25,6 +27,12 @@ require.config({
 		},
 		JSXTransformer: {
 			exports: "JSXTransformer"
+		},
+		Handsontable: {
+			deps: [
+				'numeral'
+			],
+			exports: 'Handsontable'
 		}
 	}
 });

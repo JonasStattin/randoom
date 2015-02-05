@@ -1,6 +1,7 @@
 define([
-	'React'
-	], function(React) {
+	'React',
+	'jsx!./create/tableeditor.react'
+	], function(React, TableEditor) {
 
 	var CreateView = React.createClass({
 		render: function() {
@@ -9,6 +10,7 @@ define([
 					<a href="#tables" className="listTablesLink">&laquo; Table list</a>
 					<div className="createForm">
 						<p>Create a new table</p>
+						<TableEditor />
 					</div>
 				</section>
 			);
