@@ -10,7 +10,7 @@ define([
 					<a href="#tables" className="listTablesLink">&laquo; Table list</a>
 					<div className="createForm">
 						<p>Create a new table</p>
-						<TableEditor />
+						<TableEditor table={this.props.table} />
 					</div>
 				</section>
 			);

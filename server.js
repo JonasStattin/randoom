@@ -2,14 +2,15 @@ var
 	express = require('express'),
 	http = require('http'),
 	path = require('path'),
-	config = require('./config')
-
+	config = require('./config'),
+	bodyParser = require('body-parser'),
 	mongo = require('mongodb'),
 	monk = require('monk');
 
 var
 	app = express(),
-	server = http.createServer(app)
+	server = http.createServer(app),
+	jsonParser = bodyParser.json(),
 	db = monk('localhost:27017/randoom');
 
 app.set('port', process.env.PORT || config.expressPort);
@@ -26,13 +27,11 @@ server.listen(app.get('port'), function() {
 });
 
 app.get('/tables', function(req, res) {
-
 	var db = req.db;
 	var collection = db.get('tablecollection');
 	collection.find({}, {}, function(e, docs) {
 		res.send(JSON.stringify(docs));
 	});
-
 });
 
 app.get('/tables/:id', function(req, res) {
@@ -41,4 +40,21 @@ app.get('/tables/:id', function(req, res) {
 	collection.find({owner:req.params.id}, {}, function(e, docs) {
 		res.send(JSON.stringify(docs));
 	});
+});
+
+
+app.post('/tables/:id', jsonParser, function(req, res) {
+	console.log(req.body);
+	var db = req.db;
+	var collection = db.get('tablecollection');
+	collection.insert(req.body, {}, function(e, docs) {
+		res.send(JSON.stringify({
+			success: true
+		}));
+	});
+
+});
+
+app.put('/tables/:id', function(req, res) {
+	console.log('A POST REQUEST WAS MADE');
 });

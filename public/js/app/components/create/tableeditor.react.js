@@ -1,13 +1,22 @@
 define([
 	'React',
-	'Handsontable'
-	], function(React, Handsontable) {
+	'Handsontable',
+	'../../dispatcher',
+	'../../stores/table'
+	], function(React, Handsontable, Dispatcher, Table) {
 
 	var TableEditor = React.createClass({
+		save: function() {
+			Dispatcher.dispatch({
+				actionType: 'createNewTable',
+				data: this.hot.getData()
+			});
+		},
 
 		componentDidMount: function() {
 
-			var hot = new Handsontable(document.getElementById('example'), {
+
+			this.hot = new Handsontable(document.getElementById('example'), {
 				data: [
 					['', 'Maserati', 'Mazda', 'Mercedes', 'Mini', 'Mitsubishi'],
 					['2009', 0, 2941, 4303, 354, 5814],
@@ -26,6 +35,7 @@ define([
 			return (
 				<div className="tableEditor">
 					<div id="example" className="handsontable"></div>
+					<button onClick={this.save}>Save</button>
 				</div>
 			);
 		}
