@@ -179,6 +179,10 @@ button.close:active {
 .tablesWindow > ul.tableList > li.table > table tr:nth-child(odd) {
   background: #ecf0f1;
 }
+.tablesWindow > ul.tableList > li.table > table th {
+  font-size: 9px;
+  padding: 4px;
+}
 .tablesWindow > ul.tableList > li.table > table td {
   padding: 4px;
 }

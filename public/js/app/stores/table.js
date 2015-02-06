@@ -8,6 +8,7 @@ define([
 			show    : true,
 			folded  : true,
 			entries : [],
+			headings: [],
 			tags    : []
 		},
 

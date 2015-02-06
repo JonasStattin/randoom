@@ -1,8 +1,9 @@
 define([
 	'React',
-	'jsx!./tableresult.react',
 	'../../dispatcher',
-	], function(React, TableResult, Dispatcher) {
+	'jsx!./tableresult.react',
+	'jsx!./tableheader.react',
+	], function(React, Dispatcher, TableResult, TableHeader) {
 
 	var Table = React.createClass({
 		getPossibilities: function() {
@@ -71,8 +72,9 @@ define([
 
 		render: function() {
 			var entries = [];
+			entries.push(<TableHeader headings={this.props.table.headings} key={0} />);
 			this.props.table.entries.forEach(function(entry, i) {
-				entries.push(<TableResult result={entry.result} range={entry.range} key={i} />);
+				entries.push(<TableResult result={entry.result} range={entry.range} key={i+1} />);
 			});
 
 			var tags = [];
