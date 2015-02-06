@@ -52,7 +52,6 @@ app.post('/tables/:id', jsonParser, function(req, res) {
 			success: true
 		}));
 	});
-
 });
 
 app.put('/tables/:id', function(req, res) {
