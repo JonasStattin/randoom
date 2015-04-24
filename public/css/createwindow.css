@@ -1,0 +1,17 @@
+.createWindow {
+  margin: 0 auto;
+  max-width: 600px;
+}
+.createWindow > a.listTablesLink {
+  display: block;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: right;
+}
+.createWindow > .createForm {
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}

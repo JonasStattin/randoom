@@ -14,8 +14,6 @@ define([
 		},
 
 		componentDidMount: function() {
-
-
 			this.hot = new Handsontable(document.getElementById('example'), {
 				data: [
 					['', 'Maserati', 'Mazda', 'Mercedes', 'Mini', 'Mitsubishi'],

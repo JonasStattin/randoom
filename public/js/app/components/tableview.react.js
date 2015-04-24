@@ -9,6 +9,7 @@ define([
 			return (
 				<section id="tablesWindow" className="tablesWindow">
 					<a href="#create" className="createTableLink">+ Create a new table</a>
+					<a href="#register" className="createTableLink">+ Register a new user</a>
 					<TagList />
 					<TableList />
 				</section>

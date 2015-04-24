@@ -1,19 +1,26 @@
+// Require external files
 var
-	express = require('express'),
-	http = require('http'),
-	path = require('path'),
-	config = require('./config'),
-	bodyParser = require('body-parser'),
-	mongo = require('mongodb'),
-	monk = require('monk');
+	express      = require('express'),
+	http         = require('http'),
+	path         = require('path'),
+	config       = require('./config'),
+	bodyParser   = require('body-parser'),
+	mongo        = require('mongodb'),
+	monk         = require('monk')
+	rTables      = require('./routes/tables'),
+	rUsers      = require('./routes/users');
 
+// Variables
 var
-	app = express(),
-	server = http.createServer(app),
-	jsonParser = bodyParser.json(),
-	db = monk('localhost:27017/randoom');
+	app          = express(),
+	server       = http.createServer(app),
+	jsonParser   = bodyParser.json(),
+	db           = monk('localhost:27017/randoom');
 
+// Set which port to serve on
 app.set('port', process.env.PORT || config.expressPort);
+
+// Serve static files from public
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Make our db accessible to our router
@@ -22,38 +29,15 @@ app.use(function(req, res, next){
 	next();
 });
 
+// Start listening
 server.listen(app.get('port'), function() {
 	console.log('Server listening on port ' + app.get('port'));
 });
 
-app.get('/tables', function(req, res) {
-	var db = req.db;
-	var collection = db.get('tablecollection');
-	collection.find({}, {}, function(e, docs) {
-		res.send(JSON.stringify(docs));
-	});
-});
+// Table routes
+app.get('/tables', rTables.listTables);
+app.get('/tables/:id', rTables.getTable);
+app.post('/tables/:id', jsonParser, rTables.saveTable);
 
-app.get('/tables/:id', function(req, res) {
-	var db = req.db;
-	var collection = db.get('tablecollection');
-	collection.find({owner:req.params.id}, {}, function(e, docs) {
-		res.send(JSON.stringify(docs));
-	});
-});
-
-
-app.post('/tables/:id', jsonParser, function(req, res) {
-	console.log(req.body);
-	var db = req.db;
-	var collection = db.get('tablecollection');
-	collection.insert(req.body, {}, function(e, docs) {
-		res.send(JSON.stringify({
-			success: true
-		}));
-	});
-});
-
-app.put('/tables/:id', function(req, res) {
-	console.log('A POST REQUEST WAS MADE');
-});
+// User routes
+app.post('/users/register', jsonParser, rUsers.register);
